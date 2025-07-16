@@ -1,6 +1,6 @@
 import express from "express";
-import { dbConnection } from "./db/dbConnection";
-import { userRoutes } from "./src/modules/user/user.routes";
+import { dbConnection } from "./db/dbConnection.js";
+import { userRoutes } from "./src/modules/user/user.routes.js";
 
 const app = express();
 
