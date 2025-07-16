@@ -1,9 +1,11 @@
 import express from "express";
+import { dbConnection } from "./db/dbConnection";
 
 const app = express();
 
-app.use(express.json());
+dbConnection;
 
+app.use(express.json());
 
 const port = 3000;
 app.listen(port, () => {
