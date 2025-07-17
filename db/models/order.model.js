@@ -1,11 +1,10 @@
 import mongoose, { model, Schema } from "mongoose";
 
-const cartSchema = new Schema(
+const orderSchema = new Schema(
     {
         user: {
             type: mongoose.Types.ObjectId,
             ref: "User",
-            unique: true,
         },
         products: [
             {
@@ -15,16 +14,20 @@ const cartSchema = new Schema(
                 },
                 quantity: {
                     type: Number,
-                    min: 1,
                     default: 1,
-                }
-            }
+                },
+            },
         ],
+        shippingAddress: {
+            fullName: String,
+            city: String,
+            country: String,
+        }
     },
     {
-        versionKey: false,
         timestamps: true,
+        versionKey: false,
     }
 );
 
-export const cartModel = model("Cart", cartSchema);
+export const orderModel = model("Order", orderSchema);
