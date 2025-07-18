@@ -7,7 +7,7 @@ const cartSchema = new Schema(
             ref: "User",
             unique: true,
         },
-        products: [
+        items: [
             {
                 product: {
                     type: mongoose.Types.ObjectId,
