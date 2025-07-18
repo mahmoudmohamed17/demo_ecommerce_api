@@ -9,6 +9,5 @@ userRoutes.get("/users", getUsers);
 userRoutes.get("/users/:id", getUser);
 userRoutes.post("/users/signup", checkEmail, signUp);
 userRoutes.post("/users/signin", signIn);
-userRoutes.use(verifyToken);
-userRoutes.put("/users/:id", updateUser);
-userRoutes.delete("/users/:id", deleteUser);
+userRoutes.put("/users/:id", verifyToken, updateUser);
+userRoutes.delete("/users/:id", verifyToken, deleteUser);

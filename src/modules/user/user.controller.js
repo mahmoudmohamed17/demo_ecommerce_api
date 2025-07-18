@@ -101,4 +101,4 @@ export {
     signIn,
     updateUser,
     deleteUser
-}
+};

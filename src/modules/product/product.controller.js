@@ -55,4 +55,4 @@ export {
     addProduct,
     updateProduct,
     deleteProduct,
-}
+};

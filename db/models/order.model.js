@@ -6,7 +6,7 @@ const orderSchema = new Schema(
             type: mongoose.Types.ObjectId,
             ref: "User",
         },
-        products: [
+        items: [
             {
                 product: {
                     type: mongoose.Types.ObjectId,
@@ -22,7 +22,11 @@ const orderSchema = new Schema(
             fullName: String,
             city: String,
             country: String,
-        }
+        },
+        totalPrice: {
+            type: Number,
+            required: true,
+        },
     },
     {
         timestamps: true,
