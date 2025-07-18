@@ -26,7 +26,10 @@ let addProduct = async (req, res) => {
 
 let updateProduct = async (req, res) => {
     try {
-        let product = await productModel.findByIdAndUpdate(req.params.id);
+        let product = await productModel.findByIdAndUpdate(
+            req.params.id,
+            { ...req.body },
+            { new: true });
         if (product) {
             res.json({ message: "Product updated successfully!", product });
         } else {
